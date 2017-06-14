@@ -1,0 +1,19 @@
+{
+  "apps":[
+    {
+      "name"              : "modbus-server",
+      "script"            : "./server.js",
+      "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+      "out_file"          : "./logs/pm2-server-out.log",
+      "error_file"        : "./logs/pm2-server-err.log",
+      "pid_file"          : "./logs/modbus-server.pid",
+      "ignoreWatch"       : ["[\\/\\\\]\\./", "node_modules"],
+      "watch"             : "false",
+      "exec_mode"         : "fork_mode", //cluster_mode
+      "env": {
+        "NODE_ENV"        : "production",
+        "PORT": 8502
+      }
+    }
+  ]
+}

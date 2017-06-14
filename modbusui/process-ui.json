@@ -1,0 +1,19 @@
+{
+  "apps":[
+    {
+      "name"              : "modbus-ui-ui",
+      "script"            : "./scripts/start.js",
+      "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+      "out_file"          : "./logs/pm2-ui-out.log",
+      "error_file"        : "./logs/pm2-ui-err.log",
+      "pid_file"          : "./logs/modbus-ui.pid",
+      "ignoreWatch"       : ["[\\/\\\\]\\./", "node_modules"],
+      "watch"             : "false",
+      "exec_mode"         : "fork_mode", //cluster_mode
+      "env": {
+        "NODE_ENV"        : "production",
+        "PORT": 3000
+      }
+    }
+  ]
+}

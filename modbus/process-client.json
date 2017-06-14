@@ -1,0 +1,19 @@
+{
+  "apps":[
+    {
+      "name"              : "modbus-client",
+      "script"            : "./client.js",
+      "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+      "out_file"          : "./logs/pm2-client-out.log",
+      "error_file"        : "./logs/pm2-client-err.log",
+      "pid_file"          : "./logs/modbus-client.pid",
+      "ignoreWatch"       : ["[\\/\\\\]\\./", "node_modules"],
+      "watch"             : "false",
+      "exec_mode"         : "fork_mode", //cluster_mode
+      "env": {
+        "NODE_ENV"        : "production",
+        "PORT": 8081
+      }
+    }
+  ]
+}
